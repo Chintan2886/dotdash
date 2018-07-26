@@ -1,1 +1,170 @@
 //please add your test cases here.
+
+NSS-TODO List v 1.1 Application Front End Test cases
+
+SN 1:
+Test Step: Verify that NSS-TODO List v 1.1 application load successfully in browser 
+Test Data: http://localhost/dotdash-project/index.php
+Expected Result: The NSS-TODO List v 1.1 application should load successfully
+
+SN 2: Validate the 'Remove' button functionality 
+Test Step: please follow below steps,
+1) Select at least one or more check box of TODO list
+2) click on 'Remove' button
+Expected Result: selected check box of TODO list should be removed successfully from TODO list. 
+
+
+SN 3: Validate the 'Complete' button functionality
+TC1: 
+Test Step: please follow below steps,
+1) Select at least one or more check box of TODO list which is not completed.
+2) click on 'Complete' button
+Expected Result: selected check box of TODO list should be checked off as completed.
+
+TC2:
+Test Step: please follow below steps,
+1) Select at least one or more check box of TODO list which is completed.
+2) click on 'Complete' button
+Expected Result: selected check box of TODO list should be unchecked as uncompleted.
+
+
+SN 4: Validate the 'Toggle all' check box functionality
+
+TC1:
+Test Step: When the user select the 'Toggle all' check box, it should checked all TODO list items.
+Expected Result: it should be checked all TODO list items.
+
+TC2:
+Test Step: When the user unselected the 'Toggle all' check box, it should unchecked all TODO list items.
+Expected Result: it should be unchecked all TODO list items.
+
+
+SN 5:
+Test Step: Ensure the 'Category', 'Due date' and 'Add Category' dropdown fields are display by clicking on 'Advanced' hyperlink.
+Expected Result: 'Category', 'Due date' and 'Add Category' dropdown fields should be display by clicking on 'Advanced' hyperlink.
+
+
+SN 6: Validate the 'Add' button functionality
+
+TC1:
+Test Step: When the user enter the text in to add field than click on 'Add' button, it should add the line item to the TODO list
+Please note: do not add any category and due date
+Test Data: First test line item
+Expected Result: The line item should be added to the TODO list successfully and it should be display with default color like "First test line item (None)"
+
+TC2:
+Test Step: When the user enter the text in to add field than click on 'Add' button, it should add the line item to the TODO list
+Please note: add only any category 
+Test Data: Line item:First test line item, Category: Personal
+Expected Result: The line item should be added to the TODO list successfully and it should be display with category color like "First test line item (None)"
+
+TC3:
+Test Step: When the user enter the text in to add field than click on 'Add' button, it should add the line item to the TODO list
+Please note: add only Due Date
+Test Data: Line item:First test line item, Due Date: 02/03/2018
+Expected Result: The line item should be added to the TODO list successfully and it should be display with default color like "First test line item (02/03/18)"
+
+TC4:
+Test Step: When the user enter the text in to add field than click on 'Add' button, it should add the line item to the TODO list
+Please note: add any category and due date
+Test Data: Line item:First test line item, Category: Personal, Due Date: 02/03/2018
+Expected Result: The line item should be added to the TODO list successfully and it should be display like "First test line item (02/03/18)(Personal)"
+
+TC5:
+Test Step: When the user enter the text in to add field than click on 'Add' button, it should add the line item to the TODO list
+Please note: add any category and wrong due date (only select month and year)
+Test Data: Line item:First test line item, Category: Personal, Due Date: 03/2018
+Expected Result: The line item should be added to the TODO list successfully and it should be display like "First test line item (None)"
+
+TC6:
+Test Step: When the user enter existing TODO list line item text into add field than click on 'Add' button, it should led the user to "Sorry that TODO item already exists. Back" error page.
+Test Date: add existing TODO list line item 
+Expected Result: it should be led the user to "Sorry that TODO item already exists. Back" error page.
+
+TC7:
+Test Step: when the user click on 'Back' hyperlink into "Sorry that TODO item already exists. Back" error page.
+Expected Result: it should be led the user back to NSS-TODO List V 1.1 application page.
+
+
+SN 7: Validate the 'Add category' button functionality
+
+TC1:
+Test Step: When the user enter category Text into Add category field without selecting color from dropdown than click on 'Add category' button, it should add the category to the Categories list.
+Test Data: Private
+Expected Result: The category should be added to the Categories list successfully and it should be display with default color like "Private"
+
+TC2:
+Test Step: When the user enter category text into Add category field with selecting color from dropdown than click on 'Add category' button, it should add the category to the Categories list with selected color.
+Test Data: Private with Red color from dropdown
+Expected Result: The category should be added to the Categories list successfully and it should be display with Red color like "Private"
+
+TC3: 
+Test Step: When the user enter existing category text into add category without selecting color from dropdown than click on 'Add category' button, it should led the user to "The category you want to add already exists: Private " page asking "Do you want to update its colour to Private? Yes or Nevermind"
+Test Data: Private (make sure its already added in categories)
+Expected Result: it should be led the user to "The category you want to add already exists: Private" page asking "Do you want to update its colour to Private? Yes or Nevermind"
+
+TC4:
+Test Step: When the user click on 'Yes' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page where it shows that category in default color.
+Expected Result: it should led the user back to NSS-TODO List V 1.1 application page where it shows that category in default color.
+
+TC5: 
+Test Step: When the user click on 'Nevermind' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page without updating anything.
+Expected Result: it should led the user back to NSS-TODO List V 1.1 application page without updating anything.
+
+TC6: 
+Test Step: When the user enter existing category text into add category with selecting same existing color from dropdown than click on 'Add category' button, it should led the user to "The category you want to add already exists: Private" page.
+Test Data: Private (make sure its already added in categories with same color)
+Expected Result: it should be led the user to "The category you want to add already exists: Private" page.
+
+TC7: 
+Test Step: When the user enter existing category text into add category with selecting different color from dropdown than click on 'Add category' button, it should led the user to "The category you want to add already exists: Private " page asking "Do you want to update its colour to Private? Yes or Nevermind"
+Test Data: Private (make sure its already added in categories with different color)
+Expected Result: it should be led the user to "The category you want to add already exists: Private" page asking "Do you want to update its colour to Private? Yes or Nevermind"
+
+TC8:
+Test Step: When the user enter existing category text into add category with selecting different color which is exist with different category from dropdown than click on 'Add category' button, it should led the user to 
+"The category you want to add already exists: Private." page 
+asking "And the colour you picked is in use by another category: Personal
+Do you want to remove the colour of 'Personal' and change the colour of Private to Private? 
+Yes or Nevermind"
+Test Data: Private (make sure its already added in categories with different color which is exist with different category)
+Expected Result: it should be led the user to 
+"The category you want to add already exists: Private." page 
+asking "And the colour you picked is in use by another category: Personal
+Do you want to remove the colour of 'Personal' and change the colour of Private to Private? 
+Yes or Nevermind"
+
+TC9:
+Test Step: When the user click on 'Yes' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page where it shows 'Private' category in updated color and 'Personal' category in default color.
+Expected Result: it should led the user back to NSS-TODO List V 1.1 application page where it shows 'Private' category in updated color and 'Personal' category in default color.
+
+TC5: 
+Test Step: When the user click on 'Nevermind' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page without updating anything.
+Expected Result: it should led the user back to NSS-TODO List V 1.1 application page without updating anything.
+
+
+
+SN 8: Removing existing categories
+
+TC1:
+Test Step: When the user click on existing Category 'Private' hyperlink, it should led the user to "Are you sure you wish to remove Leisure? Yes or Nevermind" Page.
+Expected Result: it should be led the user to "Are you sure you wish to remove Leisure? Yes or Nevermind" Page.
+
+TC2: 
+Test Step: When the user click on 'Yes' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page with 'Private' category removed.
+Expected Result: it should be led the user back to NSS-TODO List V 1.1 application page with 'Private' category removed.
+
+TC3: 
+Test Step: When the user click on 'Nevermind' hyperlink, it should led the user back to NSS-TODO List V 1.1 application page without removed 'Private' category.
+Expected Result: it should be led the user back to NSS-TODO List V 1.1 application page without removed 'Private' category.
+
+TC4:
+Test Step: once the user remove existing category successfully, verify that it also get remove from existing line item from TODO list.
+Expected Result: it should get removed from existing line item from TODO list.
+
+
+SN :
+Test Step:
+Test Data:
+Expected Result: 
+
